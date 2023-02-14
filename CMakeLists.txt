@@ -1,5 +1,5 @@
 project( computeoveraccess )
-cmake_minimum_required(VERSION 3.18.0)
+cmake_minimum_required(VERSION 3.16.0)
 
 enable_language( CXX )
 #include(FetchContent)
