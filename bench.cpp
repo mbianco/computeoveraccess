@@ -9,6 +9,7 @@ template <typename F>
 void compute(std::vector<std::vector<double>>& data, F const& fun) {
 	int len = data[1].size();
 	for (int j = 0; j < len; ++j) {
+		data[1][j] += data[0][j];
 		for (int i = 3; i < data.size(); ++i) {
 			data[1][j] += data[i][j];
 		}
@@ -19,6 +20,7 @@ void compute(std::vector<std::vector<double>>& data, F const& fun) {
 void access(std::vector<std::vector<double>>& data, std::vector<double> const& prec) {
 	int len = data[2].size();
 	for (int j = 0; j < len; ++j) {
+		data[2][j] += data[0][j];
 		for (int i = 3; i < data.size(); ++i) {
 			data[2][j] += data[i][j];
 		}
@@ -30,7 +32,7 @@ class cache_cleaner {
 	std::vector<int> trash;
 
 public:
-	cache_cleaner() : trash(1<<21) {}
+	cache_cleaner() : trash(1<<23) {}
 
 	void clean() {
 		for (auto& v: trash) {
