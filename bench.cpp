@@ -62,6 +62,7 @@ void run(int n_arrays, int length, F&& fun) {
 		v = std::vector<double>(length, 10.);
 	}
 
+	// Precompute the values instead of computing in the main loop
 	std::transform(data[0].begin(), data[0].end(), precomputed.begin(), [fun](double v) {return 1/fun(v);});
 
 	cc.clean();
