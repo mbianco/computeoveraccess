@@ -48,6 +48,11 @@ public:
 template <typename F>
 void run(int n_arrays, int length, F&& fun) {
 	std::vector<std::vector<double>> data(n_arrays+3);
+	/*
+		Data[0] is the field that would be otherwise precomputed
+		data[1] is the field holding the results for the compute only option
+		data[2] is the field holding the results when using the precomputed field
+	*/
 	std::vector<double> precomputed(length);
 	cache_cleaner cc;
 
@@ -70,7 +75,7 @@ void run(int n_arrays, int length, F&& fun) {
 	std::chrono::duration<double> elapsed_c = end_c-start_c;
     std::cout << "elapsed time compute: " << elapsed_c.count() << "s\n";
 	std::chrono::duration<double> elapsed_a = end_a-start_a;
-    std::cout << "elapsed time access : " << elapsed_a.count() << "s\n";
+    std::cout << "elapsed time access:  " << elapsed_a.count() << "s\n";
 
 	bool ok = true;
 
