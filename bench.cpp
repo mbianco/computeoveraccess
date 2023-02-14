@@ -73,9 +73,9 @@ void run(int n_arrays, int length, F&& fun) {
 	auto end_a = std::chrono::steady_clock::now();
 
 	std::chrono::duration<double> elapsed_c = end_c-start_c;
-    std::cout << "elapsed time compute: " << elapsed_c.count() << "s\n";
+    std::cout << "elapsed time compute: " << elapsed_c.count() << "\n";
 	std::chrono::duration<double> elapsed_a = end_a-start_a;
-    std::cout << "elapsed time access:  " << elapsed_a.count() << "s\n";
+    std::cout << "elapsed time access:  " << elapsed_a.count() << "\n";
 
 	bool ok = true;
 
