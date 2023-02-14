@@ -98,7 +98,7 @@ void run(int n_arrays, int length, F&& fun) {
 
 int main(int argc, char** argv) {
 	for (int i = 0; i < 20; ++i) {
-	 	std::cout << "Try the inverse\n";
+		std::cout << "Try the inverse\n";
 		run(atoi(argv[1]), atoi(argv[2]), [](double v) { return v; });
 		std::cout << "Try the inverse of the exponential\n";
 		run(atoi(argv[1]), atoi(argv[2]), [](double v) { return std::exp(v); });
